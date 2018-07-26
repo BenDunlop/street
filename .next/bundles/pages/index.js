@@ -2222,6 +2222,7 @@ function (_Component) {
         });
       };
 
+      var photoLength = this.state.photos.length;
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         style: {
           display: 'flex',
@@ -2231,34 +2232,36 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 52
         }
       }, this.state.slideCount !== 0 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(BackArrow, {
         previousImage: this.previousImage,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 53
         }
       }) : '', this.state.photos.map(function (photo, key) {
         if (_this3.state.photos.indexOf(photo) === _this3.state.slideCount) {
           return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
             key: photo.id,
             style: {
-              margin: '0 auto'
+              margin: '0 auto',
+              height: '600px',
+              overflow: 'hidden'
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 56
+              lineNumber: 57
             }
           }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
             src: photo.images.standard_resolution.url,
             alt: photo.caption,
             style: {
-              height: '600px'
+              width: '100%'
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 57
+              lineNumber: 58
             }
           }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
             style: {
@@ -2268,7 +2271,7 @@ function (_Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 58
+              lineNumber: 59
             }
           }, photo.caption !== null ? photo.caption.text : ''));
         }
@@ -2278,9 +2281,9 @@ function (_Component) {
         nextImage: this.nextImage,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 67
         }
-      }) : '', console.log(this.state.photos));
+      }) : '', console.log(photoLength));
     }
   }]);
 

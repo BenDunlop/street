@@ -47,14 +47,15 @@ class Index extends Component {
 
             </div>
         )
+        let photoLength = this.state.photos.length;
         return (
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center',marginTop: '30px'}}>
                 {this.state.slideCount !== 0 ? <BackArrow previousImage={this.previousImage}/> : ''}
                 {this.state.photos.map((photo, key) => {
                     if (this.state.photos.indexOf(photo) === this.state.slideCount) {
                         return (
-                            <div key={photo.id} style={{margin: '0 auto'}}>
-                                <img src={photo.images.standard_resolution.url} alt={photo.caption} style={{height:'600px'}}/>
+                            <div key={photo.id} style={{margin: '0 auto', height:'600px', overflow:'hidden'}}>
+                                <img src={photo.images.standard_resolution.url} alt={photo.caption} style={{  width:'100%'}}/>
                                 <div style={{width:'600px', margin: '24px auto', fontStyle: 'italic'}}>
                                     {photo.caption !== null ? photo.caption.text : ''}
                                 </div>
@@ -64,7 +65,7 @@ class Index extends Component {
                     return ''
                 })}
                 {this.state.slideCount !== (this.state.photos.length - 1) ? <NextArrow nextImage={this.nextImage}/> : ''}
-                {console.log(this.state.photos)}
+                {console.log(photoLength)}
             </div>
         );
 
